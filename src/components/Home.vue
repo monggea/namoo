@@ -5,7 +5,7 @@
 =================-->
 <div class="home-video">
   <video autoplay
-  src="@/assets/img/video.mp4"
+  :src="video"
   playsinline
   muted
   ></video>
@@ -19,7 +19,7 @@
 
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import video from '@/assets/img/video.mp4'
 import Theme from '@/components/home/Theme.vue'
 import Slide from '@/components/home/Homeslide.vue'
 import Works from '@/components/home/Works.vue'

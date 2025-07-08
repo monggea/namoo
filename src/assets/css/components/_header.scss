@@ -17,6 +17,8 @@
     aspect-ratio: 175/55;
     background:url('@/assets/img/logo.png')no-repeat;
     background-size:cover;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
 
@@ -34,6 +36,8 @@
       font-size:clamp(12px, 1vw, 15px);
       font-weight:800;
       padding:0;
+
+      &:hover{color: #83A667 !important;}
     }
   }
 

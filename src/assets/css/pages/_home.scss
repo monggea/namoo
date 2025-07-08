@@ -51,7 +51,7 @@
       &:first-child{margin-left:clamp(24px,24vw,360px);
       transition: all .3s;}
 
-      @media(max-width:960px){width:280px;
+      @media(max-width:959px){width:280px;
       &:first-child{margin-left:clamp(24px,6.6667vw,360px)}}
 
       
@@ -129,7 +129,7 @@
       text-shadow: 0 0 4px #999;
       gap:13px;
 
-      @media(max-width:600px){
+      @media(max-width:599px){
         bottom:0%;
         margin:0 0 13px 16px;
       }

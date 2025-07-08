@@ -19,9 +19,8 @@ import Faq from '@/components/audition/Faq.vue';
 
 
 const routes = [
-  { path:'/', redirect:'/home' },
-  { path:'/namooActors/', redirect:'/home' }, // 기본 리디렉션
-  { path:'/home', component:Home },
+  { path:'/', redirect:'/namooActors' },
+  { path:'/namooActors', component:Home }, // 기본 리디렉션
 
   { path:'/company', component:Intro },
   { path:'/history', component:History },

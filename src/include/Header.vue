@@ -8,7 +8,7 @@
         로고 삽입
         ================-->
         <v-toolbar-title>
-            <RouterLink to="/home">
+            <RouterLink to="/namooActors">
             <div class="top-logo"></div>
             </RouterLink>
         </v-toolbar-title>
@@ -46,7 +46,7 @@
         모바일 버튼 (md 이하)
         ================-->
         <v-btn icon class="d-md-none d-flex align-center mr-6"
-            @click="drawer = !drawer" ripple="false"
+            @click="drawer = !drawer" :ripple="false"
             ><v-icon>{{ drawer ? 'mdi-close' : 'mdi-menu' }}</v-icon>
         </v-btn>
     </v-app-bar>
@@ -188,7 +188,7 @@
 
 
 <script setup>
-import {ref, computed, onMounted, onBeforeUnmount} from 'vue'
+import {ref, computed, onMounted, onBeforeUnmount, nextTick} from 'vue'
 import {useRouter, useRoute} from 'vue-router'
 
 // const isOpaque = ref(false)
@@ -227,7 +227,8 @@ if (scrollY > lastScrollY && scrollY > 100) {
   lastScrollY = scrollY
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick()
   window.addEventListener('scroll', handleScroll)
   handleScroll()
 })
