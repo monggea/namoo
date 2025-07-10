@@ -278,9 +278,10 @@ body {
 .scroll-top {
   position: fixed;
   right: clamp(24px, 4vw, 60px);
-  bottom: 60px;
+  bottom: var(--bottom-offset, 60px);
   z-index: 9999;
   transition: bottom 0.3s ease;
+  background: rgba(255, 255, 255, 0.3);
 }
 .scroll-top .date {
   color: #000 !important;

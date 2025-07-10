@@ -12,14 +12,34 @@
     </v-btn>
 </template>
 
+
+
+
+
+
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const showScrollBtn = ref(false)
+const scrollBottomOffset = ref(60)
 
 const handleScroll = () => {
-  showScrollBtn.value = window.scrollY > 200
+  showScrollBtn.value = window.scrollY > 10
+
+const footer = document.querySelector('footer')
+  if (!footer) return
+
+  const footerRect = footer.getBoundingClientRect()
+  const windowHeight = window.innerHeight
+
+  if (footerRect.top < windowHeight) {
+    const overlap = windowHeight - footerRect.top
+    scrollBottomOffset.value = -60 + overlap
+  } else {
+    scrollBottomOffset.value = 60
+  }
 }
+
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
